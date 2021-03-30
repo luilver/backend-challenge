@@ -4,8 +4,22 @@ class Member < ApplicationRecord
   validates_presence_of :name, :website_url, :shorten_url
  
   def friends
-    Friendship
-      .where("friendships.member_id = ? OR friendships.friend_id = ?", id, id)
+    friends = Friendship
+      .where("friendships.member_id = ?", id)
+
+    result = []
+    result = friends.map(&:friend) unless friends.empty?
+
+    members = Friendship
+      .where("friendships.friend_id = ?", id)
+
+    if result.empty?
+      result = members.map(&:member)
+    else
+      result << members.map(&:member) unless members.empty?
+    end
+
+    result
   end
 
   def add_friends(new_friends)
