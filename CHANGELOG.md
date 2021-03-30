@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rubocop
 - SimplCov
 
+## [0.0.1] - 2021-03-30 12:05:06 CDT
+### Change
+- README
+
 ## [0.0.0] - 2021-03-30 11:53:04 CDT
 - Docker
 - Grape API
