@@ -21,7 +21,17 @@ module V1
         get do
           members = ::Members::Indexer.call
 
-          present members, with: Entities::Member
+          present members, with: Entities::Member, with_number_of_friends: true
+        end
+
+        route_param :member_id, type: Integer do
+          get do
+            member_id = params[:member_id]
+
+            member = ::Members::Reporter.call(member_id: member_id)
+
+            present member, with: Entities::Member, with_reporter: true
+          end
         end
       end
     end
