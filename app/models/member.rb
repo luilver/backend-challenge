@@ -1,6 +1,8 @@
 class Member < ApplicationRecord
   before_validation :make_shorten_url
 
+  has_one :profile
+
   validates_presence_of :name, :website_url, :shorten_url
  
   def friends

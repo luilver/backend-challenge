@@ -14,13 +14,19 @@ module Members
     end
 
     def call
-      member_create!
+      member = member_create!
+      pull_tags member
+      member
     end
 
     private
 
     def member_create!
       Member.create!(name: name, website_url: website_url)
+    end
+
+    def pull_tags(member)
+      Url::Scrapper.call(member: member)
     end
   end
 end
