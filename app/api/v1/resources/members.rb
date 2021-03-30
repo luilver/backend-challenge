@@ -3,10 +3,26 @@
 module V1
   module Resources
     class Members < Base
-      get :members do
-        members = ::Members::Indexer.call
+      resource :members do
 
-        present members, with: Entities::Member
+        params do
+          requires :name, type: String
+          requires :website_url, type: String
+        end
+        post do
+          name = params[:name]
+          website_url = params[:website_url]
+
+          member = ::Members::Creator.call(name: name, website_url: website_url)
+
+          present member, with: Entities::Member
+        end
+
+        get do
+          members = ::Members::Indexer.call
+
+          present members, with: Entities::Member
+        end
       end
     end
   end
