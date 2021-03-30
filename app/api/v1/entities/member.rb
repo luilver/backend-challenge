@@ -3,9 +3,14 @@
 module V1
   module Entities
     class Member < Base
-      expose :name
-      expose :website_url
-      expose :number_of_friends
+      with_options if: :with_number_of_friends do
+        expose :number_of_friends
+      end
+
+      with_options if: :with_reporter do
+        expose :shorten_url
+        expose :friends, with: Entities::Friend
+      end
     end
   end
 end
