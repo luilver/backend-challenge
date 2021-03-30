@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rubocop
 - SimplCov
 
+## [0.3.0] - 2021-03-30 18:27:02 CDT
+### Add
+- Members API
+
 ## [0.2.0] - 2021-03-30 15:49:25 CDT
 ### Add
 - Url Shrtener Service

@@ -11,9 +11,13 @@ default_sut: &sut
   adapter: sqlite3
   timeout: 5000
 
+# development:
+#   <<: *default
+#   database: backend_challenge_development
+
 development:
-  <<: *default
-  database: backend_challenge_development
+  <<: *sut
+  database: db/development.sqlite3
 
 test:
   <<: *sut
