@@ -10,5 +10,11 @@ module V1
 
     helpers Helpers::Base
     mount Resources::Verify
+
+    add_swagger_documentation api_version: 'v1',
+                              doc_version: '0.0.0',
+                              hide_documentation_path: true,
+                              base_path: '/',
+                              info: { title: 'Backend Challenge' }
   end
 end
