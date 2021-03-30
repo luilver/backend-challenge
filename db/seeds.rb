@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'ffaker'
+
+puts 'Emptying data'
+Member.delete_all
+Friendship.delete_all
+
+puts 'Insert Members...'
+m1 = Member.create!(name: FFaker::Name.name, website_url: FFaker::Internet.http_url)
+m2 = Member.create!(name: FFaker::Name.name, website_url: FFaker::Internet.http_url)
+m3 = Member.create!(name: FFaker::Name.name, website_url: FFaker::Internet.http_url)
+
+
+puts 'Making friends...'
+f1 = Friendship.create!(member: m1, friend: m2)
+f2 = Friendship.create!(member: m3, friend: m2)
