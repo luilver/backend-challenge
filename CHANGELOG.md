@@ -11,7 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rubocop
 - SimplCov
 
-## [0.3.0] - 2021-03-30 18:27:02 CDT
+## [0.4.0] - 2021-03-30 18:03:02 CDT
+### Add
+- Friendship API
+- Profile 
+
+## [0.3.0] - 2021-03-30 17:27:02 CDT
 ### Add
 - Members API
 
