@@ -9,6 +9,7 @@ module V1
     content_type :json, 'application/json'
 
     helpers Helpers::Base
+    mount Resources::Members
     mount Resources::Verify
 
     add_swagger_documentation api_version: 'v1',
