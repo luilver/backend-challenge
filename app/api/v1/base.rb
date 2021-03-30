@@ -10,6 +10,7 @@ module V1
 
     helpers Helpers::Base
     mount Resources::Members
+    mount Resources::Friendships
     mount Resources::Verify
 
     add_swagger_documentation api_version: 'v1',
