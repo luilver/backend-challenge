@@ -1,24 +1,85 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Prerequisites
 
-Things you may want to cover:
+The setups steps expect following tools installed on the system.
 
-* Ruby version
+* Ruby 2.7.2
 
-* System dependencies
+* Rails 6.1.3
 
-* Configuration
+* Sqlite3
 
-* Database creation
+* Postgres 9x or latest
 
-* Database initialization
+* Yarn 1.22.10
 
-* How to run the test suite
+* Webpacker 5.2.1
 
-* Services (job queues, cache servers, search engines, etc.)
+* Docker 19.03.13, build cd8016b6bc or latest
 
-* Deployment instructions
+* Docker composer 1.25.5 or latest
 
-* ...
+## Manaully development deploy
+
+### 1. Check out the repository
+
+```
+git clone git@github.com/luilver/backend-challenge.git
+```
+
+### 2. Bundle gems
+
+```
+cd backend-challenge
+git checkout development
+bundle
+```
+
+### 3. Migrate and seed the database
+
+```
+rails db:migrate db:seed
+```
+
+### 4. Run testings
+
+```
+rspec
+```
+
+### 5. RTFM
+
+Start the service:
+
+```
+rails s
+```
+
+Open your browser and point to: 
+
+http://localhost:3000/v1/swagger_doc.json
+
+## Orchestration deployment
+
+### 1. Run
+
+```
+docker-compose up
+```
+
+## Advanced
+
+### Check out advanced branch
+
+```
+git checkout advanced
+```
+
+### Run testings
+
+```
+rspec
+```
+
+#### Note:
